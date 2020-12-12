@@ -1,0 +1,16 @@
+{
+    "port": 4000,
+    "authorization": "leave this blank for no auth required",
+    "maxUploadMB": set to 0 for no upload limit,
+    "postMessage": "leave this blank for no post message, use $url for the url", 
+    "rateLimit": {
+        "minutes": set to 0 for no rate limit,
+        "requests": 10, 
+        "error": "You may only attempt to post 10 images per minute!"
+    },
+    "errors": {
+        "notFound": "File not found.",
+        "unauthorized": "Unauthorized.",
+        "missingFile": "You must attach a file!"
+    }
+}
