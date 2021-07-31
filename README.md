@@ -3,7 +3,7 @@ make config.json in root directory with authorization code:
 ```
 {
     "authorization": "epicgamer",
-    "url": "https://mrscopes.me/"
+    "url": "https://mrscopes.me"
 }
 ```
 
