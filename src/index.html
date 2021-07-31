@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<script>
+		async function fileUpload(event) {
+		    event.preventDefault();
+		
+		    const files = document.getElementById('files');
+		
+		    const formData = new FormData()
+		    formData.append('file', files.files[0]);
+		
+		    fetch('/files', {
+		        method: 'POST',
+		        headers: { authorization: document.querySelector('#pass').value },
+		        body: formData
+		    })
+		    .then(response => response.json())
+		    .then(data => {
+		        window.location = data.url;
+		    })
+		    .catch(error => {
+		        console.log(error);
+		        alert('You must enter the correct authentication code.');
+		    });
+		}
+		
+	</script>
+	<body>
+		Authentication: <input type="password" id="pass" autocomplete="current-password">
+		<br><br>
+		<form onsubmit="fileUpload(event)">
+			<input type="file" id="files" />
+			<br><br>
+			<input type="submit">
+		</form>
+	</body>
+</html>
